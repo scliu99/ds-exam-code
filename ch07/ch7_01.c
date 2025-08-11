@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <malloc.h>
-#include <stdbool.h>           /* °O¿ı bool¦CÁ|­È */
+#include <stdbool.h>           /* è¨˜éŒ„ boolåˆ—èˆ‰å€¼ */
 
 typedef struct nodestr *bt_pointer;
 typedef struct nodestr
 {
-    char data;   /* ¸ê®Æ¶µ¬°¦r¤¸  */ 
+    char data;   /* è³‡æ–™é …ç‚ºå­—å…ƒ  */ 
     bt_pointer left_child,right_child;
 }treenode;
 
@@ -27,33 +27,33 @@ bt_pointer CreateBTree(char *list)
     return NewNode;
 }
 
-void inorder(bt_pointer ptr) /* ¤¤§Ç¨«³X */
+void inorder(bt_pointer ptr) /* ä¸­åºèµ°è¨ª */
 {
   if(ptr)
   {
       inorder(ptr->left_child);   
-      printf("%c ",ptr->data);        /* ¦p¬°¼Æ­È¸ê®Æ§ï¬°%d */
+      printf("%c ",ptr->data);        /* å¦‚ç‚ºæ•¸å€¼è³‡æ–™æ”¹ç‚º%d */
       inorder(ptr->right_child);  
   }
 }
 
-void preorder(bt_pointer ptr) /* «e§Ç¨«³X */
+void preorder(bt_pointer ptr) /* å‰åºèµ°è¨ª */
 {
   if(ptr) 
   {
-       printf("%c ",ptr->data);          /* ¦p¬°¼Æ­È¸ê®Æ§ï¬°%d */
+       printf("%c ",ptr->data);          /* å¦‚ç‚ºæ•¸å€¼è³‡æ–™æ”¹ç‚º%d */
        preorder(ptr->left_child);    
        preorder(ptr->right_child);   
   } 
 }
 
-void postorder(bt_pointer ptr) /* «á§Ç¨«³X */
+void postorder(bt_pointer ptr) /* å¾Œåºèµ°è¨ª */
 {
   if(ptr)   
   {    
        postorder(ptr->left_child);    
        postorder(ptr->right_child);   
-       printf("%c ",ptr->data);               /* ¦p¬°¼Æ­È¸ê®Æ§ï¬°%d */
+       printf("%c ",ptr->data);               /* å¦‚ç‚ºæ•¸å€¼è³‡æ–™æ”¹ç‚º%d */
   }    
 }
 
@@ -61,14 +61,14 @@ int main(void)
 {
       char *list = "AB0D00CE0G00F00";  // char *list = "ABDH00I00E00CF0JK00L00G00";
       bt_pointer T;
-      printf("¤G¤¸¾ğ«Ø¥ß¤¤..."); 
+      printf("äºŒå…ƒæ¨¹å»ºç«‹ä¸­..."); 
       T = CreateBTree(list);
-      printf("...«Ø¥ß§¹²¦"); 
-      printf("\n¤G¤¸¾ğªº¤¤§Ç¨«³Xµ²ªG:"); 
+      printf("...å»ºç«‹å®Œç•¢"); 
+      printf("\näºŒå…ƒæ¨¹çš„ä¸­åºèµ°è¨ªçµæœ:"); 
       inorder(T);
-      printf("\n¤G¤¸¾ğªº«e§Ç¨«³Xµ²ªG:");      
+      printf("\näºŒå…ƒæ¨¹çš„å‰åºèµ°è¨ªçµæœ:");      
       preorder(T);
-      printf("\n¤G¤¸¾ğªº«á§Ç¨«³Xµ²ªG:"); 
+      printf("\näºŒå…ƒæ¨¹çš„å¾Œåºèµ°è¨ªçµæœ:"); 
       postorder(T);    
 
       system("pause");

@@ -5,7 +5,7 @@
 typedef struct{
       int key;
       char data;
-     /*   ¨ä¥L¸ê®ÆÄæ¦ì */
+     /*   å…¶ä»–è³‡æ–™æ¬„ä½ */
 }record;
 
 void SetData(record x[],int n)
@@ -29,8 +29,8 @@ int BinSearch(record x[],int n,int k)
     {
          middle = (left + right) / 2;
          if(k==x[middle].key)  return middle;
-         if(k>x[middle].key)   left = middle + 1;    /* ©ñ±ó¥ª¥b³¡ */
-         else                  right = middle - 1;   /* ©ñ±ó¥k¥b³¡ */
+         if(k>x[middle].key)   left = middle + 1;    /* æ”¾æ£„å·¦åŠéƒ¨ */
+         else                  right = middle - 1;   /* æ”¾æ£„å³åŠéƒ¨ */
     }
     return -1;
 }
@@ -44,9 +44,9 @@ int InterpolationSearch(record x[],int n,int k)
     {
         mid = low + (((k-x[low].key) * (high - low))/
                                      (x[high].key - x[low].key));
-        if(x[mid].key == k)  return mid;       /* §ä¨ì¤F¡A¦^¶Ç¯Á¤Ş */
-        if(x[mid].key < k)   low = mid + 1;    /* ©ñ±ó«e­± */
-        else                 high = mid - 1;   /* ©ñ±ó«á­± */
+        if(x[mid].key == k)  return mid;       /* æ‰¾åˆ°äº†ï¼Œå›å‚³ç´¢å¼• */
+        if(x[mid].key < k)   low = mid + 1;    /* æ”¾æ£„å‰é¢ */
+        else                 high = mid - 1;   /* æ”¾æ£„å¾Œé¢ */
     }
 
     if (x[low].key == k)
@@ -61,9 +61,9 @@ int main()
     record x[10];
 
     SetData(x,10);
-    loc = InterpolationSearch(x,10,700); /*·j´Mkey=700ªº°O¿ı */
+    loc = InterpolationSearch(x,10,700); /*æœå°‹key=700çš„è¨˜éŒ„ */
     if (loc==-1)
-      printf("µL¦¹µ§¸ê®Æ\n");
+      printf("ç„¡æ­¤ç­†è³‡æ–™\n");
     else
       printf("x[%d]=%d \t %c\n",loc,x[loc].key,x[loc].data);
       

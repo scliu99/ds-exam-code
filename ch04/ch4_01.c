@@ -19,8 +19,8 @@ nodePointer GetNode()
 
   NewNode = (nodePointer) malloc(sizeof(node)); 
 
-  if(NewNode==NULL) /*¤wµL°O¾ĞÅé¥i°t¸m¡Amalloc·|¦^¶ÇNULLµ¹NewNode */
-     printf("°O¾ĞÅé¤£¨¬!");
+  if(NewNode==NULL) /*å·²ç„¡è¨˜æ†¶é«”å¯é…ç½®ï¼Œmallocæœƒå›å‚³NULLçµ¦NewNode */
+     printf("è¨˜æ†¶é«”ä¸è¶³!");
 
   return  NewNode;
 }
@@ -35,7 +35,7 @@ void LinkListTraverse(nodePointer L)
    }
 }
 
-nodePointer CreateAll(int *data,int n)  /* ¤p¸Õ¨­¤â  4-2 */
+nodePointer CreateAll(int *data,int n)  /* å°è©¦èº«æ‰‹  4-2 */
 {
     nodePointer L=NULL;
     int i;
@@ -46,7 +46,7 @@ nodePointer CreateAll(int *data,int n)  /* ¤p¸Õ¨­¤â  4-2 */
        n->data = data[i];
        n->link = L;
        L = n;
-       printf("¦b¦ê¦C¶}ÀY³B´¡¤J¤@­Ó¸`ÂI%d.....OK!\n",data[i]);       
+       printf("åœ¨ä¸²åˆ—é–‹é ­è™•æ’å…¥ä¸€å€‹ç¯€é»%d.....OK!\n",data[i]);       
     }    
     return L;
 }
@@ -57,7 +57,7 @@ int main()
     nodePointer first=NULL;
     int data[6] = {26,18,15,29,32,12};
     
-    first = CreateAll(data,6);       /* ¤p¸Õ¨­¤â  4-2 */
+    first = CreateAll(data,6);       /* å°è©¦èº«æ‰‹  4-2 */
     LinkListTraverse(first); 
     
     system("pause");

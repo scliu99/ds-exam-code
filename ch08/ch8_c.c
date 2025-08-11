@@ -3,9 +3,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <malloc.h>
-#include <stdbool.h>           /* °O¿ı bool¦CÁ|­È */
+#include <stdbool.h>           /* è¨˜éŒ„ boolåˆ—èˆ‰å€¼ */
 
-#define MaxVertexSize 101  /* ³Ì¦h100­Ó³»ÂI */
+#define MaxVertexSize 101  /* æœ€å¤š100å€‹é ‚é» */
 
 typedef struct node *node_pointer;
 typedef struct node{
@@ -15,7 +15,7 @@ typedef struct node{
 
 node_pointer graph[MaxVertexSize];
 
-int n=1;  /* ¥Ø«e¥¿¦b³B²zªº³»ÂI½s¸¹ */
+int n=1;  /* ç›®å‰æ­£åœ¨è™•ç†çš„é ‚é»ç·¨è™Ÿ */
 
 #define FALSE 0
 #define TRUE 1
@@ -38,7 +38,7 @@ void addQ(Q_Node_P *front,Q_Node_P *rear,int vertex)
    temp=(Q_Node_P) malloc(sizeof(Q_Node));
    if(temp==NULL)
    {
-     printf("°O¾ĞÅé¤£¨¬!");
+     printf("è¨˜æ†¶é«”ä¸è¶³!");
      exit(1);
    }
    temp->vertex = vertex;
@@ -57,7 +57,7 @@ int deleteQ(Q_Node_P *front)
    int vertex;
    if(temp==NULL)
    {
-     printf("¦î¦C¤wªÅ!");
+     printf("ä½‡åˆ—å·²ç©º!");
      exit(1);
    }
    vertex = temp->vertex;
@@ -75,9 +75,9 @@ void bfs(int v)
   visited[v] = TRUE;
   addQ(&front,&rear,v);
 
-  while(front!=NULL)          /* ²Ä¤@¼h°j°é§PÂ_¦î¦C¬O§_¬°ªÅ */
+  while(front!=NULL)          /* ç¬¬ä¸€å±¤è¿´åœˆåˆ¤æ–·ä½‡åˆ—æ˜¯å¦ç‚ºç©º */
   {
-      v = deleteQ(&front);        /* ¨ú¥X¦î¦C¤¸¯À */
+      v = deleteQ(&front);        /* å–å‡ºä½‡åˆ—å…ƒç´  */
       w = graph[v];
       while(w!=NULL)  
       {

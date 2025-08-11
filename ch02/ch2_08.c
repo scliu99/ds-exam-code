@@ -8,11 +8,11 @@ int hanoi(int n,char T1,char T2,char T3)
    if(n<1)
        return 1;
    if(n==1)
-       printf("%c¤ì¼Î³Ì¤W¼h½L¤l²¾°Ê¨ì%c¤ì¼Î\n",T1,T3);
+       printf("%cæœ¨æ¨æœ€ä¸Šå±¤ç›¤å­ç§»å‹•åˆ°%cæœ¨æ¨\n",T1,T3);
    else
    {
        hanoi(n-1,T1,T3,T2);
-       printf("%c¤ì¼Î³Ì¤W¼h½L¤l²¾°Ê¨ì%c¤ì¼Î\n",T1,T3);
+       printf("%cæœ¨æ¨æœ€ä¸Šå±¤ç›¤å­ç§»å‹•åˆ°%cæœ¨æ¨\n",T1,T3);
        hanoi(n-1,T2,T1,T3);
    }
    return 0;

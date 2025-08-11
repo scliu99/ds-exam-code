@@ -45,9 +45,9 @@ int main()
 {
     int x[10] = {30,24,27,16,29,33,25,18,32,35};
 
-    printf("�Ƨǫe            "); PrintData(x,0,9);
+    printf("排序前            "); PrintData(x,0,9);
     QuickSort(x,0,9);
-    printf("�Ƨǫ�            "); PrintData(x,0,9);    
+    printf("排序後            "); PrintData(x,0,9);    
     system("pause");
     return 0;
 }

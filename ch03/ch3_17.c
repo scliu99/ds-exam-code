@@ -10,7 +10,7 @@ struct item
     int column;
     double value;
 };
-struct item A[MAX_Item+1];   /*  MAX_Item¬°¤@­Ó±`¼Æ  */
+struct item A[MAX_Item+1];   /*  MAX_Itemç‚ºä¸€å€‹å¸¸æ•¸  */
 
 void Transpose(struct item  A[], struct item  B[])
 {

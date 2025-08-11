@@ -3,24 +3,24 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <malloc.h>
-#include <stdbool.h>           /* °O¿ı bool¦CÁ|­È */
+#include <stdbool.h>           /* è¨˜éŒ„ boolåˆ—èˆ‰å€¼ */
 
 typedef struct nodestr *bt_pointer;
 typedef struct nodestr
 {
-    char data;   /* ¸ê®Æ¶µ¬°¦r¤¸  */ 
+    char data;   /* è³‡æ–™é …ç‚ºå­—å…ƒ  */ 
     bt_pointer left_child,right_child;
 }treenode;
 
 typedef struct{
     int ItemKey;
-    /*   °ïÅ|¤¸¯Àªº¨ä¥¦Äæ¦ì  */
+    /*   å †ç–Šå…ƒç´ çš„å…¶å®ƒæ¬„ä½  */
 }element;
 
 #define MaxStackSize 100
 
 int top=-1;
-bt_pointer stack[MaxStackSize];    /* ¥H°}¦C®É°µ°ïÅ| */
+bt_pointer stack[MaxStackSize];    /* ä»¥é™£åˆ—æ™‚åšå †ç–Š */
 
 bool isEmpty(int *top)
 {
@@ -39,7 +39,7 @@ void push(int *top,bt_pointer item)
   
   if(isFull(top)==true)
   {
-     printf("°ïÅ|¤wº¡!");
+     printf("å †ç–Šå·²æ»¿!");
      exit(1);
   }
   else
@@ -52,7 +52,7 @@ bt_pointer pop(int *top)
    bt_pointer p=NULL;
   if(isEmpty(top)==true)
   {
-    return p;  // °ïÅ|ªÅªº®É­Ô¡Aµ{¦¡¤´À³Ä~Äò°õ¦æ¡A©Ò¥H¤£­n¤¤Â_µ{¦¡¡Aª½±µ¦^¶ÇNULL§Y¥i   printf("°ïÅ|¤wªÅ!");    exit(1);
+    return p;  // å †ç–Šç©ºçš„æ™‚å€™ï¼Œç¨‹å¼ä»æ‡‰ç¹¼çºŒåŸ·è¡Œï¼Œæ‰€ä»¥ä¸è¦ä¸­æ–·ç¨‹å¼ï¼Œç›´æ¥å›å‚³NULLå³å¯   printf("å †ç–Šå·²ç©º!");    exit(1);
   }
   else
   { 
@@ -80,22 +80,22 @@ bt_pointer CreateBTree(char *list)
     return NewNode;
 }
 
-void iterator_inorder(bt_pointer node) /* «D»¼°j¤¤§Ç¨«³X */
+void iterator_inorder(bt_pointer node) /* ééè¿´ä¸­åºèµ°è¨ª */
 {
-  /* node¤@¶}©lÀ³¸Ó«ü¦V¾ğªº®Ú¸`ÂI */
+  /* nodeä¸€é–‹å§‹æ‡‰è©²æŒ‡å‘æ¨¹çš„æ ¹ç¯€é» */
   while(1)
   {
     while(node)
     {
-       push(&top,node);         /* push ¨£6.2.1¸` */
+       push(&top,node);         /* push è¦‹6.2.1ç¯€ */
        node = node->left_child;
     }
-    node = pop(&top);             /* pop ¨£6.2.1¸` */
+    node = pop(&top);             /* pop è¦‹6.2.1ç¯€ */
 
     if(!node)
         break;   
 
-    printf("%c ",node->data);   /* ¦p¬°¼Æ­È¸ê®Æ§ï¬°%d */
+    printf("%c ",node->data);   /* å¦‚ç‚ºæ•¸å€¼è³‡æ–™æ”¹ç‚º%d */
     node = node->right_child;
   }
 }
@@ -107,10 +107,10 @@ int main(void)
 {
       char *list = "AB0D00CE0G00F00";  // char *list = "ABDH00I00E00CF0JK00L00G00";
       bt_pointer T;
-      printf("¤G¤¸¾ğ«Ø¥ß¤¤..."); 
+      printf("äºŒå…ƒæ¨¹å»ºç«‹ä¸­..."); 
       T = CreateBTree(list);
-      printf("...«Ø¥ß§¹²¦"); 
-      printf("\n¤G¤¸¾ğªº¤¤§Ç¨«³Xµ²ªG:"); 
+      printf("...å»ºç«‹å®Œç•¢"); 
+      printf("\näºŒå…ƒæ¨¹çš„ä¸­åºèµ°è¨ªçµæœ:"); 
       iterator_inorder(T);
       
 

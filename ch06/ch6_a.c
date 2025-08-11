@@ -7,7 +7,7 @@
 
 typedef struct{
     int ItemKey;
-    /*   ¦о¦C¤ёЇАЄєЁдҐ¦Дж¦м  */
+    /*   дЅ‡е€—е…ѓзґ зљ„е…¶е®ѓж¬„дЅЌ  */
 }element;
 
 struct Queue_Node{

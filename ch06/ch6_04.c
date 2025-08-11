@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <malloc.h>
-#include <stdbool.h>           /* °O¿ı bool¦CÁ|­È */
+#include <stdbool.h>           /* è¨˜éŒ„ boolåˆ—èˆ‰å€¼ */
 
 typedef struct{
     int ItemKey;
-    /*   °ïÅ|¤¸¯Àªº¨ä¥¦Äæ¦ì  */
+    /*   å †ç–Šå…ƒç´ çš„å…¶å®ƒæ¬„ä½  */
 }element;
 
 struct Stack_Node{
@@ -16,31 +16,31 @@ struct Stack_Node{
 typedef struct Stack_Node S_Node;
 typedef S_Node *S_Node_P;
 
-int push(S_Node_P *top,element Item)    /*  ©I¥s»yªk¬° int pushOK = push(&top,Item);  */
+int push(S_Node_P *top,element Item)    /*  å‘¼å«èªæ³•ç‚º int pushOK = push(&top,Item);  */
 { 
    S_Node_P temp = (S_Node_P)malloc(sizeof(S_Node));  
    if(temp==NULL)
    {
-      printf("°O¾ĞÅé¤£¨¬!");
+      printf("è¨˜æ†¶é«”ä¸è¶³!");
       return false;
    }
    temp->Item = Item;  
    temp->link = *top;  
-   *top = temp;       /*  top¥Ã»·«ü¦V°ïÅ|ªº³»ºİ  */
+   *top = temp;       /*  topæ°¸é æŒ‡å‘å †ç–Šçš„é ‚ç«¯  */
    return true;
 }
 
-int pop(S_Node_P *top,element *Item)    /*  ©I¥s»yªk¬° int popOK = pop(&top,&Item);  */
+int pop(S_Node_P *top,element *Item)    /*  å‘¼å«èªæ³•ç‚º int popOK = pop(&top,&Item);  */
 {
    S_Node_P temp = *top;   
    
    if(temp==NULL)
    {
-     printf("°ïÅ|¤wªÅ!"); 
+     printf("å †ç–Šå·²ç©º!"); 
      return false;
    }
    *Item = temp->Item;   
-   *top  = temp->link;              /*  top¥Ã»·«ü¦V°ïÅ|ªº³»ºİ  */
+   *top  = temp->link;              /*  topæ°¸é æŒ‡å‘å †ç–Šçš„é ‚ç«¯  */
    free(temp);  
    return true;
 }
@@ -49,20 +49,20 @@ void PrintStack(S_Node_P top)
 {
     S_Node_P visitP;
     visitP = top;
-    printf("°ïÅ|³»ºİ|");
+    printf("å †ç–Šé ‚ç«¯|");
     while(visitP!=NULL)
     {
        printf("%d|",visitP->Item.ItemKey);
        visitP = visitP->link;
     }
-    printf("°ïÅ|©³ºİ\n");
+    printf("å †ç–Šåº•ç«¯\n");
 }
 
 int main(void)
 {
     element Item;
     char ch='I';
-    S_Node_P top = NULL; /* ¤@¶}©l®É¡Atop«ü¦VNULL */ 
+    S_Node_P top = NULL; /* ä¸€é–‹å§‹æ™‚ï¼ŒtopæŒ‡å‘NULL */ 
    
     while(ch!='E')
     {

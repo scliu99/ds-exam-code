@@ -15,24 +15,24 @@ void AdjustToHeap(int x[],int root,int n)
    int temp,parent,child;
 
    
-   temp = x[root];               /* ¨ú¥X®Ú¸`ÂIÁä­È©ñ¤Jtemp */
-   parent = root;                /* ¤÷¸`ÂIªº½s¸¹ */
-   child = 2 * root;               /* ¥ª¤l¸`ÂIªº½s¸¹ */
+   temp = x[root];               /* å–å‡ºæ ¹ç¯€é»éµå€¼æ”¾å…¥temp */
+   parent = root;                /* çˆ¶ç¯€é»çš„ç·¨è™Ÿ */
+   child = 2 * root;               /* å·¦å­ç¯€é»çš„ç·¨è™Ÿ */
     while(child <= n)
     {
        if ((child < n) && (x[child] < x[child+1]))
-         child = child + 1;    /* ¥k¤l¸`ÂI¸û¤j,©Ò¥HÀ³¸Ó¤ñ¸ûªº¬O¥k¤l¸`ÂI */ 
+         child = child + 1;    /* å³å­ç¯€é»è¼ƒå¤§,æ‰€ä»¥æ‡‰è©²æ¯”è¼ƒçš„æ˜¯å³å­ç¯€é» */ 
        
        if(temp >= x[child])  
-          break;              /* ­×¥¿¤w¸g§¹¦¨ */
+          break;              /* ä¿®æ­£å·²ç¶“å®Œæˆ */
        else
        {
-          x[parent] = x[child];        /* »P¸û¤jªº¤l¸`ÂI¤¬´« */
-          parent = child;              /* ²¾¨ì¤U¤@¼h */
+          x[parent] = x[child];        /* èˆ‡è¼ƒå¤§çš„å­ç¯€é»äº’æ› */
+          parent = child;              /* ç§»åˆ°ä¸‹ä¸€å±¤ */
           child = child * 2;
        }
     }
-    x[parent] = temp;  /*  ®Ú¸`ÂIÁä­È©ñ¤J¥¿½Tªº¦ì¸m   */
+    x[parent] = temp;  /*  æ ¹ç¯€é»éµå€¼æ”¾å…¥æ­£ç¢ºçš„ä½ç½®   */
 }
 
 void HeapSort(int x[],int i,int n)
@@ -42,7 +42,7 @@ void HeapSort(int x[],int i,int n)
     {
       AdjustToHeap(x,i,n);    /* */
     }
-    printf("³Ì¤j²Ö°ï:\t");
+    printf("æœ€å¤§ç´¯å †:\t");
     PrintData(x,1,10);        
     for(i=n-1;i>=1;i--)
     {
@@ -50,7 +50,7 @@ void HeapSort(int x[],int i,int n)
       x[1] = x[i+1];
       x[i+1] = temp;
       AdjustToHeap(x,1,i); 
-      printf("i=%dªº³Ì¤j²Ö°ï:\t",i);
+      printf("i=%dçš„æœ€å¤§ç´¯å †:\t",i);
       PrintData(x,1,i); 
     }
 }
@@ -59,9 +59,9 @@ int main()
 {
     int x[11] = {0,24,17,36,55,63,72,12,65,89,54};
 
-    printf("±Æ§Ç«e  x[1:10]="); PrintData(x,1,10);
+    printf("æ’åºå‰  x[1:10]="); PrintData(x,1,10);
     HeapSort(x,1,10);
-    printf("±Æ§Ç«á  x[1:10]="); PrintData(x,1,10);
+    printf("æ’åºå¾Œ  x[1:10]="); PrintData(x,1,10);
     
     system("pause");
     return 0;

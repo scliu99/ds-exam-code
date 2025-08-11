@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <malloc.h>
-#include <stdbool.h>           /* °O¿ı bool¦CÁ|­È */
+#include <stdbool.h>           /* è¨˜éŒ„ boolåˆ—èˆ‰å€¼ */
 
 typedef struct{
     int ItemKey;
-    /*   °ïÅ|¤¸¯Àªº¨ä¥¦Äæ¦ì  */
+    /*   å †ç–Šå…ƒç´ çš„å…¶å®ƒæ¬„ä½  */
 }element;
 
 #define MaxStackSize 100
@@ -30,7 +30,7 @@ void push(StackADT *S,element item)
 {
   if(isFull(*S)==true)
   {
-     printf("°ïÅ|¤wº¡!");
+     printf("å †ç–Šå·²æ»¿!");
      exit(1);
   }
   else
@@ -41,7 +41,7 @@ element pop(StackADT *S)
 {
   if(isEmpty(*S)==true)
   {
-     printf("°ïÅ|¤wªÅ!");
+     printf("å †ç–Šå·²ç©º!");
      exit(1);
   }
   else
@@ -51,11 +51,11 @@ element pop(StackADT *S)
 void PrintStack(StackADT *S)
 {
     int i;
-    printf("°ïÅ|ªºtop­È¥Ø«e¬°%d,°ïÅ|¤º®e¦p¤U:\n",S->top);
+    printf("å †ç–Šçš„topå€¼ç›®å‰ç‚º%d,å †ç–Šå…§å®¹å¦‚ä¸‹:\n",S->top);
 
     if(S->top < 0)
     {
-        printf("°ïÅ|¤wªÅ!\n");
+        printf("å †ç–Šå·²ç©º!\n");
         return;
     }
     printf("     |   :  |\n",S->stack[S->top-i]);
@@ -74,7 +74,7 @@ int main(void)
     StackADT S1;
     char ch='I';
 
-    S1.top = -1;   /* °ïÅ|ªì©l¤Æ */ 
+    S1.top = -1;   /* å †ç–Šåˆå§‹åŒ– */ 
 
     while(ch!='E')
     {
@@ -87,11 +87,11 @@ int main(void)
           printf("push :");
           scanf("%d",&Item.ItemKey);
           push(&S1,Item);
-          printf("push¤J%d,",Item.ItemKey);
+          printf("pushå…¥%d,",Item.ItemKey);
           PrintStack(&S1);
           break;
         case 'O':
-          printf("pop¥X%d,",pop(&S1).ItemKey);
+          printf("popå‡º%d,",pop(&S1).ItemKey);
           PrintStack(&S1);
           break;
         default:

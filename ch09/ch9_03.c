@@ -31,9 +31,9 @@ int main()
 {
     int x[5]={24,21,16,42,25};    
    
-    printf("�Ƨǫe  "); PrintData(x,5);
+    printf("排序前  "); PrintData(x,5);
     InsertionSort(x,5);
-    printf("�Ƨǫ�  "); PrintData(x,5);
+    printf("排序後  "); PrintData(x,5);
   
     system("pause");
     return 0;

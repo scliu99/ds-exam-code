@@ -4,7 +4,7 @@
 typedef struct{
         int key;
         char data;
-        /*   ¨ä¥L¸ê®ÆÄæ¦ì */
+        /*   å…¶ä»–è³‡æ–™æ¬„ä½ */
 }record;
 
 void SetData(record x[],int n)
@@ -33,18 +33,18 @@ int FibSearch(record x[],int n,int k)
     int i, root, m;
     int p,q,temp;
     int Fib[21];
-    CreateFib(Fib,21);  /* Fib[0]~Fib[20]¦s©ñ 0,1,1,2,3,5.... */
+    CreateFib(Fib,21);  /* Fib[0]~Fib[20]å­˜æ”¾ 0,1,1,2,3,5.... */
 
     for(root=0;Fib[root]<=n;root++)
       ;
-    root--;              /* ´M§ä¶O¤ó¾ğªº¾ğ®Ú */
+    root--;              /* å°‹æ‰¾è²»æ°æ¨¹çš„æ¨¹æ ¹ */
 
     i = Fib[root-1];
     p = Fib[root-2];
     q = Fib[root-3];
     m = n + 1 - Fib[root];
 
-    if(x[i].key < k)     /* ½Õ¾ã²Ä¤@¦¸¤ñ¸ûªº¦ì¸m */
+    if(x[i].key < k)     /* èª¿æ•´ç¬¬ä¸€æ¬¡æ¯”è¼ƒçš„ä½ç½® */
         i = i+ m;
 
     while(Fib[i] > 0)
@@ -85,7 +85,7 @@ int main()
     SetData(x,21);
     loc = FibSearch(x,20,88); 
     if (loc==-1)
-        printf("\nµL¦¹µ§¸ê®Æ\n");
+        printf("\nç„¡æ­¤ç­†è³‡æ–™\n");
     else
         printf("\nx[%d]=%d \t %c\n",loc,x[loc].key,x[loc].data);
     system("pause");

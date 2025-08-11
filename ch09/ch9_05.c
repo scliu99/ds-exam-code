@@ -38,10 +38,10 @@ void MergeSort(int x[],int sorted[],int i,int m,int n)
     }
     if(i>m)
       for(a=j;a<=n;a++)
-         sorted[k+a-j] = x[a];         /* ¸É¤Wx[j]~x[n] */
+         sorted[k+a-j] = x[a];         /* è£œä¸Šx[j]~x[n] */
     else
       for(a=i;a<=m;a++)
-         sorted[k+a-i] = x[a];         /* ¸É¤Wx[i]~x[m] */
+         sorted[k+a-i] = x[a];         /* è£œä¸Šx[i]~x[m] */
 }
 
 void MergePass(int x[],int sorted[],int n,int len)
@@ -50,10 +50,10 @@ void MergePass(int x[],int sorted[],int n,int len)
     for(i=0;i<=n-2*len;i=i+2*len)
       MergeSort(x,sorted,i,i+len-1,i+2*len-1);
 
-    if(i+len<n)       /* ³B²zn-1<i+2*len-1ªº¤£¨¬lenªø«×ªº¤l¦ê¦C */
+    if(i+len<n)       /* è™•ç†n-1<i+2*len-1çš„ä¸è¶³lené•·åº¦çš„å­ä¸²åˆ— */
       MergeSort(x,sorted,i,i+len-1,n-1);
     else                  
-      for(j=i;j<n;j++)      /* ³B²zn¬°³æ¼Æ,¦Ó¾É­P«á­±¸¨³æªº¤@­Ó */
+      for(j=i;j<n;j++)      /* è™•ç†nç‚ºå–®æ•¸,è€Œå°Žè‡´å¾Œé¢è½å–®çš„ä¸€å€‹ */
          sorted[j] = x[j];
 }
 
@@ -64,7 +64,7 @@ int main()
     int len,i,n=7;
 
     SetData(x,0,6);
-    printf("±Æ§Ç«e      x[]="); PrintData(x,0,n-1);
+    printf("æŽ’åºå‰      x[]="); PrintData(x,0,n-1);
     
     for(len=1,i=1;len<n;len=2*len,i++)
     {
@@ -74,7 +74,7 @@ int main()
           MergePass(sorted,x,n,len);
     }
     
-    printf("±Æ§Ç«á sorted[]="); PrintData(sorted,0,n-1);
+    printf("æŽ’åºå¾Œ sorted[]="); PrintData(sorted,0,n-1);
     
     system("pause");
     return 0;

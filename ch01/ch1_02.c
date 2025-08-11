@@ -12,7 +12,7 @@ int main(void)
    for(Sum=0,i=0;i<num;i++)
        Sum = Sum + Scores[i];
    Avg = Sum / num;
-   printf("¥­§¡¦¨ÁZ=%d\n",Avg);
+   printf("å¹³å‡æˆç¸¾=%d\n",Avg);
    system("pause"); 
    return 0;     
 }

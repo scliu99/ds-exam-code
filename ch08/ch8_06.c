@@ -6,8 +6,8 @@ int chooseMin(int [],int,short int []);
 
 #define FALSE 0
 #define TRUE 1
-#define INFINITE 99        /* ¥Î¥H¥NªíµL­­¤j */
-#define MaxVertexSize 10   /* ³Ì¦h³»ÂI+1 */
+#define INFINITE 99        /* ç”¨ä»¥ä»£è¡¨ç„¡é™å¤§ */
+#define MaxVertexSize 10   /* æœ€å¤šé ‚é»+1 */
 
 void shortestpath(int F,int edgeCost[][MaxVertexSize],
                   int D[],int n,short int selected[])
@@ -22,7 +22,7 @@ void shortestpath(int F,int edgeCost[][MaxVertexSize],
     selected[F] = TRUE;
     D[F] = 0;
 
-    for(x=2;x<n;x++)     /* ¹ïÀ³½d¨Ò Step2~Step9 */
+    for(x=2;x<n;x++)     /* å°æ‡‰ç¯„ä¾‹ Step2~Step9 */
     {
       t = chooseMin(D,n,selected);
       selected[t] = TRUE;
@@ -67,10 +67,10 @@ int main()
   short int selected[MaxVertexSize];
   int n=MaxVertexSize;
   int F,x;
-  printf("¿é¤J°_©l³»ÂI:");
+  printf("è¼¸å…¥èµ·å§‹é ‚é»:");
   scanf("%d",&F);
 
-  shortestpath(F,edgeCost,D,n,selected);  /* ­pºâ³Ìµu¸ô®| */
+  shortestpath(F,edgeCost,D,n,selected);  /* è¨ˆç®—æœ€çŸ­è·¯å¾‘ */
 
   for(x=1;x<n;x++)
   {

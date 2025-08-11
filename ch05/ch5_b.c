@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <malloc.h>
-#include <stdbool.h>           /* °O¿ı bool¦CÁ|­È */
+#include <stdbool.h>           /* è¨˜éŒ„ boolåˆ—èˆ‰å€¼ */
 
 typedef enum {head,entry,matrix} nodetype;
 nodetype tag;
@@ -10,7 +10,7 @@ typedef struct matrix_node MatrixNode;
 typedef MatrixNode *MatrixNode_P;
 struct entry_node
 {
-    int value;   /* ­«­n¡A¥²¶·©ñ¦b²Ä¤@¶µ */ 
+    int value;   /* é‡è¦ï¼Œå¿…é ˆæ”¾åœ¨ç¬¬ä¸€é … */ 
     int row;
     int col;
 };

@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <malloc.h>
-#define MaxVertexSize 101  /* ³Ì¦h100­Ó³»ÂI */
+#define MaxVertexSize 101  /* æœ€å¤š100å€‹é ‚é» */
 
 typedef struct node *node_pointer;
 typedef struct node{
-    int vertex;  /* ­Y³»ÂI½s¸¹¬°¦r¤¸,«h§ï¬° char vertex; ¨Ì¦¹Ãş±À */
+    int vertex;  /* è‹¥é ‚é»ç·¨è™Ÿç‚ºå­—å…ƒ,å‰‡æ”¹ç‚º char vertex; ä¾æ­¤é¡æ¨ */
     struct node *next;
 }graphnode;
 
@@ -34,7 +34,7 @@ void topological_sort(int n)
      {
        if(top==0)
        {
-           printf("ºô¸ô¥]§tÀô¸ô,µLªk¶i¦æ©İ¾ë±Æ§Ç");      exit(1);
+           printf("ç¶²è·¯åŒ…å«ç’°è·¯,ç„¡æ³•é€²è¡Œæ‹“æ¨¸æ’åº");      exit(1);
        }
        j = top;
        top = graph[top].count;
@@ -43,7 +43,7 @@ void topological_sort(int n)
        while(ptr!=NULL)
        {
              k = ptr->vertex;
-             dec_count(k);   /* graph[k].count »¼´î1 */
+             dec_count(k);   /* graph[k].count éæ¸›1 */
              if(graph[k].count==0)
              {
                     graph[k].count = top;

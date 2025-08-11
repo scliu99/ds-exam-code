@@ -3,9 +3,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <malloc.h>
-#include <stdbool.h>           /* °O¿ı bool¦CÁ|­È */
+#include <stdbool.h>           /* è¨˜éŒ„ boolåˆ—èˆ‰å€¼ */
 
-#define MaxVertexSize 101  /* ³Ì¦h100­Ó³»ÂI */
+#define MaxVertexSize 101  /* æœ€å¤š100å€‹é ‚é» */
 
 typedef struct node *node_pointer;
 typedef struct node{
@@ -15,18 +15,18 @@ typedef struct node{
 
 node_pointer graph[MaxVertexSize];
 
-int n=1;  /* ¥Ø«e¥¿¦b³B²zªº³»ÂI½s¸¹ */
+int n=1;  /* ç›®å‰æ­£åœ¨è™•ç†çš„é ‚é»ç·¨è™Ÿ */
 
 #define FALSE 0
 #define TRUE 1
 
 short int visited[MaxVertexSize]; 
 
-void dfs(int v)    /*  v¬°«ô³X°_ÂI */
+void dfs(int v)    /*  vç‚ºæ‹œè¨ªèµ·é» */
 {
    node_pointer w;
-   printf("%d\n",v);     /* ¦L¥X³»ÂI */
-   visited[v] = TRUE;      /* ³]©w¬°¤w«ô³X */
+   printf("%d\n",v);     /* å°å‡ºé ‚é» */
+   visited[v] = TRUE;      /* è¨­å®šç‚ºå·²æ‹œè¨ª */
     
    w = graph[v];
    while(w!=NULL)

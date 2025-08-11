@@ -3,10 +3,10 @@
 #include <stdlib.h>
 
 
-int deleteElement(int location,int ary[],int len)/* §R°£¹Bºâ */
+int deleteElement(int location,int ary[],int len)/* åˆªé™¤é‹ç®— */
 {
      int i;
-     if(location >= len) return 0;  /* ¦pªG§R°£ªº¯Á¤Ş¦ì¸m¶W¹L°}¦C½d³ò¡A¦^¶Ç0 */
+     if(location >= len) return 0;  /* å¦‚æœåˆªé™¤çš„ç´¢å¼•ä½ç½®è¶…éé™£åˆ—ç¯„åœï¼Œå›å‚³0 */
      for(i=location ; i<len ; i++)
          ary[i] = ary[i+1];
      ary[len-1] = 0;

@@ -3,10 +3,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <malloc.h>
-#include <stdbool.h>           /* °O¿ı bool¦CÁ|­È */
+#include <stdbool.h>           /* è¨˜éŒ„ boolåˆ—èˆ‰å€¼ */
 
 
-#define MaxVertexSize 101  /* ³Ì¦h100­Ó³»ÂI */
+#define MaxVertexSize 101  /* æœ€å¤š100å€‹é ‚é» */
 typedef struct node *node_pointer;
 typedef struct node{
     int vertex;     
@@ -14,7 +14,7 @@ typedef struct node{
 }graphnode;
 
 node_pointer graph[MaxVertexSize];
-int n=1;  /* ¥Ø«e¥¿¦b³B²zªº³»ÂI½s¸¹ */
+int n=1;  /* ç›®å‰æ­£åœ¨è™•ç†çš„é ‚é»ç·¨è™Ÿ */
 
 
 

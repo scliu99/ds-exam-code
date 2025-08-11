@@ -22,8 +22,8 @@ nodePointer GetNode()
 
   NewNode = (nodePointer)malloc(sizeof(node)); 
 
-  if(NewNode==NULL) /*¤wµL°O¾ÐÅé¥i°t¸m¡Amalloc·|¦^¶ÇNULLµ¹NewNode */
-     printf("°O¾ÐÅé¤£¨¬!");
+  if(NewNode==NULL) /*å·²ç„¡è¨˜æ†¶é«”å¯é…ç½®ï¼Œmallocæœƒå›žå‚³NULLçµ¦NewNode */
+     printf("è¨˜æ†¶é«”ä¸è¶³!");
 
   return  NewNode;
 }
@@ -39,7 +39,7 @@ int insertAfter(nodePointer L, nodePointer m, int d)
     n->link = m->link; 
     m->link = n; 
   }
-  else  /*  ¦ê¦C­ì¬°ªÅ¦ê¦C */
+  else  /*  ä¸²åˆ—åŽŸç‚ºç©ºä¸²åˆ— */
     L = n;
   return true;
 }

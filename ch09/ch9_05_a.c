@@ -37,10 +37,10 @@ void MergeSort(int x[],int sorted[],int i,int m,int n)
     }
     if(i>m)
       for(a=j;a<=n;a++)
-         sorted[k+a-j] = x[a];         /* �ɤWx[j]~x[n] */
+         sorted[k+a-j] = x[a];         /* 補上x[j]~x[n] */
     else
       for(a=i;a<=m;a++)
-         sorted[k+a-i] = x[a];         /* �ɤWx[i]~x[m] */
+         sorted[k+a-i] = x[a];         /* 補上x[i]~x[m] */
 }
 
 int main()
@@ -49,13 +49,13 @@ int main()
     int sorted[100]={0};
 
     SetData(x,15,25);
-    printf("�Ƨǫe      x[15:19]="); PrintData(x,15,19);
-    printf("�Ƨǫe      x[20:25]=                    ");
+    printf("排序前      x[15:19]="); PrintData(x,15,19);
+    printf("排序前      x[20:25]=                    ");
     PrintData(x,20,25);
     
     MergeSort(x,sorted,15,19,25);
     
-    printf("�Ƨǫ� sorted[15:25]="); PrintData(sorted,15,25);
+    printf("排序後 sorted[15:25]="); PrintData(sorted,15,25);
     system("pause");
     return 0;
 }

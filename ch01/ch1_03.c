@@ -10,7 +10,7 @@ int main(void)
       int score;
    };
    struct StuData p1;
-   strcpy(p1.id,"S9903501");  /*  ±Np1¾Ç¥Íªº¾Ç¸¹«ü©w¬°¦r¦êS9903501 */
+   strcpy(p1.id,"S9903501");  /*  å°‡p1å­¸ç”Ÿçš„å­¸è™ŸæŒ‡å®šç‚ºå­—ä¸²S9903501 */
    p1.score = 75;
    system("pause"); 
    return 0;     

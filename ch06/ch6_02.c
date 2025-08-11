@@ -1,13 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <malloc.h>
-#include <stdbool.h>           /* °O¿ý bool¦CÁ|­È */
+#include <stdbool.h>           /* è¨˜éŒ„ boolåˆ—èˆ‰å€¼ */
 
 #define MaxQueueSize 100
 
 typedef struct{
     int ItemKey;
-    /*   ¦î¦C¤¸¯Àªº¨ä¥¦Äæ¦ì  */
+    /*   ä½‡åˆ—å…ƒç´ çš„å…¶å®ƒæ¬„ä½  */
 }element;
 
 typedef struct{
@@ -32,7 +32,7 @@ void addQ(QueueADT *Q,element item)
 {
   if(isFull(*Q)==true)
   {
-     printf("¦î¦C¤wº¡!");
+     printf("ä½‡åˆ—å·²æ»¿!");
      exit(1);
   }
   else
@@ -43,7 +43,7 @@ element deleteQ(QueueADT *Q)
 {
   if(isEmpty(*Q)==true)
   {
-     printf("¦î¦C¤wªÅ!");
+     printf("ä½‡åˆ—å·²ç©º!");
      exit(1);
   }
   else
@@ -53,12 +53,12 @@ element deleteQ(QueueADT *Q)
 void PrintQueue(QueueADT *Q)
 {
     int i;
-    printf("front­È¥Ø«e=%d,rear­È¥Ø«e=%d,¦î¦C¦p¤U:\n",
+    printf("frontå€¼ç›®å‰=%d,rearå€¼ç›®å‰=%d,ä½‡åˆ—å¦‚ä¸‹:\n",
                                      Q->front,Q->rear);
 
     if(Q->front>=Q->rear)
     {
-      printf("¦î¦C¤wªÅ!\n");
+      printf("ä½‡åˆ—å·²ç©º!\n");
       return;
     }
 
@@ -97,11 +97,11 @@ int main(void)
           printf("addQ :");
           scanf("%d",&Item.ItemKey);
           addQ(&Q1,Item);
-          printf("addQ¤J%d,",Item.ItemKey);
+          printf("addQå…¥%d,",Item.ItemKey);
           PrintQueue(&Q1);
           break;
         case 'D':
-          printf("deleteQ¥X%d,",deleteQ(&Q1).ItemKey);
+          printf("deleteQå‡º%d,",deleteQ(&Q1).ItemKey);
           PrintQueue(&Q1);
           break;
         default:

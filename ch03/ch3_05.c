@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 #define n 3
-void func3(int p[][n],int rows,int cols);  /*  �禡�ŧi  */
+void func3(int p[][n],int rows,int cols);  /*  函式宣告  */
 int main()
 {
      int i,j;

@@ -42,10 +42,10 @@ int main()
     int y[6] = {15,23,29,48,62,65};
     int z[11] = {0};
 
-    printf("�Ƨǫe x[]="); PrintData(x,5);
-    printf("�Ƨǫe y[]="); PrintData(y,6);
+    printf("排序前 x[]="); PrintData(x,5);
+    printf("排序前 y[]="); PrintData(y,6);
     TwoListMergeSort(x,5,y,6,z,5+6);
-    printf("�Ƨǫ� z[]="); PrintData(z,11);
+    printf("排序後 z[]="); PrintData(z,11);
     system("pause");
     return 0;
 }

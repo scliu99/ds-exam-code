@@ -9,16 +9,16 @@ int FAC(int n)
      counter++;
      if(n<0)
      {
-         counter++;  /* ¥Nªíreturn±Ô­z */
+         counter++;  /* ä»£è¡¨returnæ•˜è¿° */
          return -1;
      }
      counter++; 
      if(n==0)
      {
-        counter++;  /* ¥Nªíreturn±Ô­z */
+        counter++;  /* ä»£è¡¨returnæ•˜è¿° */
         return 1;
      }
-     counter++;       /* ¥Nªíreturn±Ô­z */
+     counter++;       /* ä»£è¡¨returnæ•˜è¿° */
      return n * FAC(n-1);
 }
 

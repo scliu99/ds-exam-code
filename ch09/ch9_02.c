@@ -8,8 +8,8 @@ void SelectionSort(int x[],int n)
 
     for(i=0;i<n;i++)
     {
-      minIndex = i;            /* minIndex¦s©ñ¥¼±Æ§Ç°Ï¶¡ªº³Ì¤p­È¯Á¤Þ */
-      minValue = x[minIndex];  /* minValue¦s©ñ¥¼±Æ§Ç°Ï¶¡ªº³Ì¤p­È */
+      minIndex = i;            /* minIndexå­˜æ”¾æœªæŽ’åºå€é–“çš„æœ€å°å€¼ç´¢å¼• */
+      minValue = x[minIndex];  /* minValueå­˜æ”¾æœªæŽ’åºå€é–“çš„æœ€å°å€¼ */
       for(j=i+1;j<n; j++ )
       {
           if(x[j] < minValue)
@@ -18,7 +18,7 @@ void SelectionSort(int x[],int n)
               minValue = x[minIndex];
           }
       }
-      temp = x[minIndex];  x[minIndex] = x[i];  x[i] = temp; /* ¤¬´« */
+      temp = x[minIndex];  x[minIndex] = x[i];  x[i] = temp; /* äº’æ› */
      }
 }
 
@@ -33,10 +33,10 @@ void PrintData(int x[],int n)
 int main()
 {
       int x[5] = {24,21,36,42,25};  
-      printf("±Æ§Ç«e  ");
+      printf("æŽ’åºå‰  ");
       PrintData(x,5);
       SelectionSort(x,5);
-      printf("±Æ§Ç«á  ");
+      printf("æŽ’åºå¾Œ  ");
       PrintData(x,5);
       
       system("pause");

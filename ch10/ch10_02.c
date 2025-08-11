@@ -5,7 +5,7 @@
 typedef struct{
       int key;
       char data;
-     /*   ¨ä¥L¸ê®ÆÄæ¦ì */
+     /*   å…¶ä»–è³‡æ–™æ¬„ä½ */
 }record;
 
 void SetData(record x[],int n)
@@ -30,8 +30,8 @@ int BinSearch(record x[],int n,int k)
     {
          middle = (left + right) / 2;
          if(k==x[middle].key)  return middle;
-         if(k>x[middle].key)   left = middle + 1;    /* ©ñ±ó¥ª¥b³¡ */
-         else                  right = middle - 1;   /* ©ñ±ó¥k¥b³¡ */
+         if(k>x[middle].key)   left = middle + 1;    /* æ”¾æ£„å·¦åŠéƒ¨ */
+         else                  right = middle - 1;   /* æ”¾æ£„å³åŠéƒ¨ */
     }
     return -1;
 }
@@ -42,9 +42,9 @@ int main()
     record x[9];
 
     SetData(x,8);
-    loc = BinSearch(x,8,63); /*·j´Mkey=63ªº°O¿ı */
+    loc = BinSearch(x,8,63); /*æœå°‹key=63çš„è¨˜éŒ„ */
     if (loc==-1)
-      printf("µL¦¹µ§¸ê®Æ\n");
+      printf("ç„¡æ­¤ç­†è³‡æ–™\n");
     else
       printf("x[%d]=%d \t %c\n",loc,x[loc].key,x[loc].data);
       

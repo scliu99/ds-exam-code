@@ -5,9 +5,9 @@
 
 typedef enum {LPAREN,RPAREN,PLUS,MINUS,TIMES,DIVIDE,EOE,OPERAND} TokenType;
 TokenType stack[MaxStackSize];
-char expr[MaxExprSize];          /* ¥Î¨Ó¦s©ñ¨Ï¥ÎªÌ¿é¤Jªº¤¤§Ç¹Bºâ¦¡  */
+char expr[MaxExprSize];          /* ç”¨ä¾†å­˜æ”¾ä½¿ç”¨è€…è¼¸å…¥çš„ä¸­åºé‹ç®—å¼  */
 int isp[] = {0,19,12,12,13,13,0};
-int icp[] = {20,19,12,12,13,13,0};   /* ²Å¸¹¤À§O¬° (, ), +,-,  *,/, EOE */
+int icp[] = {20,19,12,12,13,13,0};   /* ç¬¦è™Ÿåˆ†åˆ¥ç‚º (, ), +,-,  *,/, EOE */
 
 TokenType GetOneToken(char *symbol,int *c)
 {
@@ -42,7 +42,7 @@ void push(int *top,TokenType token_operator)
 {
     if(*top>=MaxStackSize-1)
     {
-      printf("°ïÅ|¤wº¡!");
+      printf("å †ç–Šå·²æ»¿!");
       exit(1);
     }
     stack[++(*top)] = token_operator;
@@ -52,7 +52,7 @@ TokenType pop(int *top)
 {
     if(*top==-1)
     {
-      printf("°ïÅ|¤wªÅ!");
+      printf("å †ç–Šå·²ç©º!");
       exit(1);
     }
     return stack[(*top)--];
@@ -69,16 +69,16 @@ void TransToPostfix(void)
   token = GetOneToken(&symbol,&c);
   while(token!=EOE)
   {
-     if(token==OPERAND)   /* ¹J¨ì¹Bºâ¤¸  */
+     if(token==OPERAND)   /* é‡åˆ°é‹ç®—å…ƒ  */
         printf("%c",symbol);
      else
         if(token==RPAREN)
         {
           while(stack[top]!=LPAREN)
               PrintTokenOperator(pop(&top));
-          pop(&top);  /* ±N(pop¥X¨Ó,¦ı¤£¦L¥X */
+          pop(&top);  /* å°‡(popå‡ºä¾†,ä½†ä¸å°å‡º */
         }
-        else                /* ¹J¨ì«D)ªº¥ô¦ó¹Bºâ¤l */
+        else                /* é‡åˆ°é)çš„ä»»ä½•é‹ç®—å­ */
         {
           while(isp[stack[top]]>=icp[token])
               PrintTokenOperator(pop(&top));  
@@ -94,9 +94,9 @@ void TransToPostfix(void)
 
 int main(void)
 {
-    printf("½Ğ¿é¤J¤¤§Çªí¥Üªk,µ²§À¦r¤¸¬°@:");
-    scanf("%s",expr);   /* ½ĞÅªªÌ¦Û¦æ¥[¤JÀË¬d¥½ºİ¦r¤¸¬°@ */ 
-    printf("«á§Çªí¥Üªk¬°:");
+    printf("è«‹è¼¸å…¥ä¸­åºè¡¨ç¤ºæ³•,çµå°¾å­—å…ƒç‚º@:");
+    scanf("%s",expr);   /* è«‹è®€è€…è‡ªè¡ŒåŠ å…¥æª¢æŸ¥æœ«ç«¯å­—å…ƒç‚º@ */ 
+    printf("å¾Œåºè¡¨ç¤ºæ³•ç‚º:");
     TransToPostfix();
     system("pause");
     return 0;

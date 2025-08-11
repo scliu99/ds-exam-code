@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <malloc.h>
-#include <stdbool.h>           /* °O¿ı bool¦CÁ|­È */
+#include <stdbool.h>           /* è¨˜éŒ„ boolåˆ—èˆ‰å€¼ */
 #define TRUE 1
 #define FALSE 0
 
@@ -11,13 +11,13 @@
 typedef struct nodestr *bt_pointer;
 typedef struct nodestr
 {
-    int data;   /* ¸ê®Æ¶µ¬°¼Æ­È  */ 
+    int data;   /* è³‡æ–™é …ç‚ºæ•¸å€¼  */ 
     bt_pointer left_child,right_child;
 }treenode;
 
 bt_pointer search(bt_pointer root,int k)
-{                /* root«ü¦V¤l¾ğ®Ú¸`ÂI,k¬°¥Ø¼ĞÁä­È */
-  if(root == NULL) return NULL;       /* ¤w§ä¨ì¾ğ¸­¸`ÂI¡A¤´¥¼§ä¨ì²Å¦XªÌ */
+{                /* rootæŒ‡å‘å­æ¨¹æ ¹ç¯€é»,kç‚ºç›®æ¨™éµå€¼ */
+  if(root == NULL) return NULL;       /* å·²æ‰¾åˆ°æ¨¹è‘‰ç¯€é»ï¼Œä»æœªæ‰¾åˆ°ç¬¦åˆè€… */
 
   if(k == root->data) return root; 
 
@@ -29,7 +29,7 @@ bt_pointer search(bt_pointer root,int k)
 
 bt_pointer iteration_search(bt_pointer BSTree,int k)
 {
-  /*   BSTree«ü¦V¾ğªº®Ú¸`ÂI,k¬°¥Ø¼ĞÁä­È   */
+  /*   BSTreeæŒ‡å‘æ¨¹çš„æ ¹ç¯€é»,kç‚ºç›®æ¨™éµå€¼   */
   while(BSTree!=NULL)
   {
     if(k == BSTree->data) return BSTree;  
@@ -39,23 +39,23 @@ bt_pointer iteration_search(bt_pointer BSTree,int k)
     else
        BSTree = BSTree->right_child; 
   }
-  return NULL;            /*  ¤w§ä¨ì¾ğ¸­¸`ÂI¡A¤´¥¼§ä¨ì²Å¦XªÌ  */
+  return NULL;            /*  å·²æ‰¾åˆ°æ¨¹è‘‰ç¯€é»ï¼Œä»æœªæ‰¾åˆ°ç¬¦åˆè€…  */
 }
 
 bt_pointer modify_search(bt_pointer BSTree,int k)
-{                /* BSTree«ü¦V¾ğªº®Ú¸`ÂI,k¬°¥Ø¼ĞÁä­È */
+{                /* BSTreeæŒ‡å‘æ¨¹çš„æ ¹ç¯€é»,kç‚ºç›®æ¨™éµå€¼ */
   while(BSTree!=NULL)
   {
     if(k == BSTree->data) return NULL;
     if(k < BSTree->data)
     {
        if(BSTree->left_child==NULL) break;
-       BSTree = BSTree->left_child; /* ©¹¥ª¤l¾ğ§ä */
+       BSTree = BSTree->left_child; /* å¾€å·¦å­æ¨¹æ‰¾ */
     }
     else
     {
        if(BSTree->right_child==NULL) break; 
-       BSTree = BSTree->right_child;  /* ©¹¥k¤l¾ğ§ä */
+       BSTree = BSTree->right_child;  /* å¾€å³å­æ¨¹æ‰¾ */
     }
   }
   return BSTree; 
@@ -70,13 +70,13 @@ void insert_node(bt_pointer *wnode,int num)
   {                    
 
 
-    ptr = (bt_pointer)malloc(sizeof(treenode)); /* ¥i¼W°t¸m¬O§_¦¨¥\,²¤ */
+    ptr = (bt_pointer)malloc(sizeof(treenode)); /* å¯å¢é…ç½®æ˜¯å¦æˆåŠŸ,ç•¥ */
     ptr->data = num;
     ptr->left_child = NULL;
     ptr->right_child = NULL;
 
 
-    if((*wnode)!=NULL)           /* «DªÅ¾ğ®É */
+    if((*wnode)!=NULL)           /* éç©ºæ¨¹æ™‚ */
     {
         if(num < temp->data)
              temp->left_child = ptr;
@@ -85,26 +85,26 @@ void insert_node(bt_pointer *wnode,int num)
     }
     else
     {
-         *wnode = ptr;               /* ªÅ¾ğ®É¡A·s¤¸¯Àª½±µ«ü©w¬°®Ú¸`ÂI */
+         *wnode = ptr;               /* ç©ºæ¨¹æ™‚ï¼Œæ–°å…ƒç´ ç›´æ¥æŒ‡å®šç‚ºæ ¹ç¯€é» */
     }
   }
 }
 
-void inorder(bt_pointer ptr) /* ¤¤§Ç¨«³X */
+void inorder(bt_pointer ptr) /* ä¸­åºèµ°è¨ª */
 {
   if(ptr)
   {
       inorder(ptr->left_child);   
-      printf("%d ",ptr->data);        /* ¼Æ­È¸ê®Æ */
+      printf("%d ",ptr->data);        /* æ•¸å€¼è³‡æ–™ */
       inorder(ptr->right_child);  
   }
 }
 
-void preorder(bt_pointer ptr) /* «e§Ç¨«³X */
+void preorder(bt_pointer ptr) /* å‰åºèµ°è¨ª */
 {
   if(ptr) 
   {
-       printf("%d ",ptr->data);          /* ¼Æ­È¸ê®Æ */
+       printf("%d ",ptr->data);          /* æ•¸å€¼è³‡æ–™ */
        preorder(ptr->left_child);    
        preorder(ptr->right_child);   
   } 
