@@ -14,7 +14,8 @@ void compute()
    S = clock();
    func1();
    E = clock();
-   Run_Time = ((double)(S-E)) / CLK_TCK;
+   Run_Time = ((double)(E-S)) / CLOCKS_PER_SEC;
+   printf("Run_Time = %f seconds\n", Run_Time);
 }
 
 void main()
