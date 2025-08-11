@@ -5,7 +5,7 @@
 #define true 1
 #define false 0
 
-struct DNode  /* Âù¦VÃìµ²¦ê¦Cªº¸`ÂIµ²ºc«Å§i */
+struct DNode  /* é›™å‘éˆçµä¸²åˆ—çš„ç¯€é»çµæ§‹å®£å‘Š */
 {
     int data;
     struct DNode *llink;
@@ -21,8 +21,8 @@ DnodePointer DLGetNode()
 
   NewNode = (DnodePointer) malloc(sizeof(Dnode)); 
 
-  if(NewNode==NULL) /*¤wµL°O¾ĞÅé¥i°t¸m¡Amalloc·|¦^¶ÇNULLµ¹NewNode */
-     printf("°O¾ĞÅé¤£¨¬!");
+  if(NewNode==NULL) /*å·²ç„¡è¨˜æ†¶é«”å¯é…ç½®ï¼Œmallocæœƒå›å‚³NULLçµ¦NewNode */
+     printf("è¨˜æ†¶é«”ä¸è¶³!");
 
   return  NewNode;
 }

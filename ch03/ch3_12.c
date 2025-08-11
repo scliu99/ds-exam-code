@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int strlen(const char *Str)       /* ¨ú±o¦r¦êªø«×¹Bºâ */
+int strlen(const char *Str)       /* å–å¾—å­—ä¸²é•·åº¦é‹ç®— */
 {
      int len=0;
      while(Str[len]!='\0')
@@ -10,7 +10,7 @@ int strlen(const char *Str)       /* ¨ú±o¦r¦êªø«×¹Bºâ */
      return len;
 }
 
-char *strcat(char *dest,const char *src)  /* ³sµ²¦r¦ê¹Bºâ */
+char *strcat(char *dest,const char *src)  /* é€£çµå­—ä¸²é‹ç®— */
 {
      int i=0,j=0;
      char *result = (char *)malloc(strlen(src)+strlen(dest)+1);

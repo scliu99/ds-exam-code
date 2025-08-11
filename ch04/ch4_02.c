@@ -19,8 +19,8 @@ nodePointer GetNode()
 
   NewNode = (nodePointer) malloc(sizeof(node)); 
 
-  if(NewNode==NULL) /*¤wµL°O¾ĞÅé¥i°t¸m¡Amalloc·|¦^¶ÇNULLµ¹NewNode */
-     printf("°O¾ĞÅé¤£¨¬!");
+  if(NewNode==NULL) /*å·²ç„¡è¨˜æ†¶é«”å¯é…ç½®ï¼Œmallocæœƒå›å‚³NULLçµ¦NewNode */
+     printf("è¨˜æ†¶é«”ä¸è¶³!");
 
   return  NewNode;
 }
@@ -36,7 +36,7 @@ void LinkListTraverse(nodePointer L)
 }
 
 
-nodePointer CreateAll(int *data,int n)  /* ¤p¸Õ¨­¤â  4-2 */
+nodePointer CreateAll(int *data,int n)  /* å°è©¦èº«æ‰‹  4-2 */
 {
     nodePointer L=NULL;
     int i;
@@ -47,7 +47,7 @@ nodePointer CreateAll(int *data,int n)  /* ¤p¸Õ¨­¤â  4-2 */
        n->data = data[i];
        n->link = L;
        L = n;
-       printf("¦b¦ê¦C¶}ÀY³B´¡¤J¤@­Ó¸`ÂI%d.....OK!\n",data[i]);       
+       printf("åœ¨ä¸²åˆ—é–‹é ­è™•æ’å…¥ä¸€å€‹ç¯€é»%d.....OK!\n",data[i]);       
     }    
     return L;
 }
@@ -55,13 +55,13 @@ nodePointer CreateAll(int *data,int n)  /* ¤p¸Õ¨­¤â  4-2 */
 nodePointer Concatenate(nodePointer L1,nodePointer L2)
 {
    nodePointer w=L1;
-   if(w != NULL)  /* L1¤£¬°ªÅ¦ê¦C */
+   if(w != NULL)  /* L1ä¸ç‚ºç©ºä¸²åˆ— */
    {
       while(w->link != NULL)  
          w = w->link;
       w->link = L2;
    }
-   else  /* L1¬°ªÅ¦ê¦C */
+   else  /* L1ç‚ºç©ºä¸²åˆ— */
       L1 = L2;
    return L1;   
 }
@@ -72,8 +72,8 @@ int main()
     nodePointer L1=NULL,L2=NULL;
     int d1[3] = {26,18,15};
     int d2[3] = {26,18,15};
-    L1 = CreateAll(d1,3);       /* ¤p¸Õ¨­¤â  4-2 */
-    L2 = CreateAll(d2,3);       /* ¤p¸Õ¨­¤â  4-2 */
+    L1 = CreateAll(d1,3);       /* å°è©¦èº«æ‰‹  4-2 */
+    L2 = CreateAll(d2,3);       /* å°è©¦èº«æ‰‹  4-2 */
     L1 = Concatenate(L1,L2);
     LinkListTraverse(L1); 
         

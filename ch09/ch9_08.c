@@ -17,7 +17,7 @@ void ShellSort(int x[],int n)
     increment = n / 2;  
     while(increment>0)
     {
-      for(i=increment;i<n;i++)   /* ¤À²Õ */
+      for(i=increment;i<n;i++)   /* åˆ†çµ„ */
       {
         j = i-increment;
         while(j>=0)
@@ -42,9 +42,9 @@ int main()
 {
     int x[9] = {24,15,33,61,16,62,39,41,25};
 
-    printf("±Æ§Ç«e  "); PrintData(x,9);
+    printf("æ’åºå‰  "); PrintData(x,9);
     ShellSort(x,9);
-    printf("±Æ§Ç«á  "); PrintData(x,9);
+    printf("æ’åºå¾Œ  "); PrintData(x,9);
 
     system("pause");
     return 0;

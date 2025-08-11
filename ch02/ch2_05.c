@@ -8,7 +8,7 @@ void compute()
   
   for(i=0,counter=0;i<100;i++)
   {
-       Sum = Sum + i;       /*   ³o¬O·Ç³Æ³Q¶q´úªº¨BÆJ    */
+       Sum = Sum + i;       /*   é€™æ˜¯æº–å‚™è¢«é‡æ¸¬çš„æ­¥é©Ÿ    */
        counter++;
   }     
   printf("%d",counter);

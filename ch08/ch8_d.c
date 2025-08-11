@@ -3,10 +3,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <malloc.h>
-#include <stdbool.h>           /* °O¿ı bool¦CÁ|­È */
+#include <stdbool.h>           /* è¨˜éŒ„ boolåˆ—èˆ‰å€¼ */
 
-#define MaxVertexSize 4    /* ³Ì¦h³»ÂI+1 */
-#define INFINITE 99        /* ¥Î¥H¥NªíµL­­¤j */
+#define MaxVertexSize 4    /* æœ€å¤šé ‚é»+1 */
+#define INFINITE 99        /* ç”¨ä»¥ä»£è¡¨ç„¡é™å¤§ */
 
 void Floyd_shortestpath(int edgeCost[][MaxVertexSize],
                         int A[][MaxVertexSize],int n)

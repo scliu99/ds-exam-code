@@ -19,7 +19,7 @@ int main(void)
    int scores[]={10,20,30,40,50};              
    int Avg; 
    Avg = ComputeAvg2(scores,5);
-   printf("¥­§¡¦¨ÁZ=%d\n",Avg);
+   printf("å¹³å‡æˆç¸¾=%d\n",Avg);
    system("pause");
    return 0;     
 }

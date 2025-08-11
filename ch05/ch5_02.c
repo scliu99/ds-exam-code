@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <malloc.h>
-#include <stdbool.h>           /* ∞Oø˝ bool¶C¡|≠» */
+#include <stdbool.h>           /* Ë®òÈåÑ boolÂàóËàâÂÄº */
 
 struct PolynomialNode_Of_CircularList
 {
@@ -12,7 +12,7 @@ struct PolynomialNode_Of_CircularList
 typedef struct PolynomialNode_Of_CircularList P_Node;
 typedef P_Node *P_Node_P;
 
-P_Node_P avail;   /* avail¨∞•˛∞Ï≈‹º∆ */
+P_Node_P avail;   /* availÁÇ∫ÂÖ®ÂüüËÆäÊï∏ */
 
 P_Node_P GetNode(void)
 {
@@ -25,7 +25,7 @@ P_Node_P GetNode(void)
    else
    {
       NewNode_P=(P_Node_P) malloc(sizeof(P_Node));
-      if (NewNode_P==NULL)  { printf("∞Oæ–≈È§£®¨!");  exit(1);  }
+      if (NewNode_P==NULL)  { printf("Ë®òÊÜ∂È´î‰∏çË∂≥!");  exit(1);  }
    }
    return NewNode_P;
 }
@@ -63,10 +63,10 @@ P_Node_P CircularListPolyAdd(P_Node_P p1,P_Node_P p2)
   double sum;
 
   p1_head = p1;
-  p1 = p1->link;     /*  ´¸®Ïp1™∫≥Ã∞™¶∏§Ë∂µ•ÿ */
-  p2 = p2->link;     /*  ´¸®Ïp2™∫≥Ã∞™¶∏§Ë∂µ•ÿ */
-  p3 = GetNode();    /*  ®˙±op3™∫º–¿Y∏`¬I  */
-  p3->expont = -1;   /*  ≥]©wp3™∫º–¿Y∏`¬I  */
+  p1 = p1->link;     /*  ÊåáÂà∞p1ÁöÑÊúÄÈ´òÊ¨°ÊñπÈ†ÖÁõÆ */
+  p2 = p2->link;     /*  ÊåáÂà∞p2ÁöÑÊúÄÈ´òÊ¨°ÊñπÈ†ÖÁõÆ */
+  p3 = GetNode();    /*  ÂèñÂæóp3ÁöÑÊ®ôÈ†≠ÁØÄÈªû  */
+  p3->expont = -1;   /*  Ë®≠ÂÆöp3ÁöÑÊ®ôÈ†≠ÁØÄÈªû  */
   p3_tail = p3;
 
   do
@@ -92,7 +92,7 @@ P_Node_P CircularListPolyAdd(P_Node_P p1,P_Node_P p2)
        p2 = p2->link;
     }
   }while(OK!=1);
-  p3_tail->link = p3;  /* ¿Ù™¨≥Ã´·§@≠”√Ïµ≤´¸¶^º–¿Y∏`¬I */
+  p3_tail->link = p3;  /* Áí∞ÁãÄÊúÄÂæå‰∏ÄÂÄãÈèàÁµêÊåáÂõûÊ®ôÈ†≠ÁØÄÈªû */
   return p3;
 }
 
@@ -119,26 +119,26 @@ int main(void)
 
    avail = NULL;
 
-   /***************´ÿ•ﬂF*************************/
+   /***************Âª∫Á´ãF*************************/
    F = GetNode();   F->expont = -1;
    F->link = F;     F_tail = F;
 
    CircularListPolyAttach(&F_tail,5,1000);
    CircularListPolyAttach(&F_tail,7,387);
    CircularListPolyAttach(&F_tail,10,0); 
-   printf("F(x)=");  printPoly(F);  /*¶C¶LF(x)*/
+   printf("F(x)=");  printPoly(F);  /*ÂàóÂç∞F(x)*/
  
-   /***************´ÿ•ﬂG*************************/
+   /***************Âª∫Á´ãG*************************/
    G = GetNode();   G->expont = -1;
    G->link = G;     G_tail = G;
    CircularListPolyAttach(&G_tail,10,400);
    CircularListPolyAttach(&G_tail,6,387);
    CircularListPolyAttach(&G_tail,3,2);
    CircularListPolyAttach(&G_tail,1,0); 
-   printf("G(x)=");  printPoly(G); /*¶C¶LG(x)*/
+   printf("G(x)=");  printPoly(G); /*ÂàóÂç∞G(x)*/
  
    H = CircularListPolyAdd(F,G);   /* H(x)=F(x)+G(x) */
-   printf("H(x)=");  printPoly(H); /*¶C¶LH*/
+   printf("H(x)=");  printPoly(H); /*ÂàóÂç∞H*/
  
    NewCircularListErase(&F);
    NewCircularListErase(&G);

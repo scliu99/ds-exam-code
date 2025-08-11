@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <malloc.h>
-#include <stdbool.h>           /* °O¿ı bool¦CÁ|­È */
+#include <stdbool.h>           /* è¨˜éŒ„ boolåˆ—èˆ‰å€¼ */
 
 struct PolynomialNode_Of_CircularList
 {
@@ -12,7 +12,7 @@ struct PolynomialNode_Of_CircularList
 typedef struct PolynomialNode_Of_CircularList P_Node;
 typedef P_Node *P_Node_P;
 
-P_Node_P avail;   /* avail¬°¥ş°ìÅÜ¼Æ */
+P_Node_P avail;   /* availç‚ºå…¨åŸŸè®Šæ•¸ */
 
 P_Node_P GetNode(void)
 {
@@ -25,7 +25,7 @@ P_Node_P GetNode(void)
    else
    {
       NewNode_P = (P_Node_P)malloc(sizeof(P_Node));
-      if (NewNode_P==NULL)  { printf("°O¾ĞÅé¤£¨¬!");  exit(1);  }
+      if (NewNode_P==NULL)  { printf("è¨˜æ†¶é«”ä¸è¶³!");  exit(1);  }
    }
    return NewNode_P;
 }

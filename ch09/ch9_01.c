@@ -13,7 +13,7 @@ void BubbleSort(int x[],int n)
       {
          if(x[i] > x[i+1])
          {
-              temp = x[i]; x[i] = x[i+1]; x[i+1] = temp;  /* �洫��� */
+              temp = x[i]; x[i] = x[i+1]; x[i+1] = temp;  /* 交換資料 */
               flag = i;
          }
       }
@@ -32,9 +32,9 @@ void PrintData(int x[],int n)
 int main()
 {
     int x[5] = {24,7,36,2,65};
-    printf("�Ƨǫe  "); PrintData(x,5);
+    printf("排序前  "); PrintData(x,5);
     BubbleSort(x,5);
-    printf("�Ƨǫ�  "); PrintData(x,5);
+    printf("排序後  "); PrintData(x,5);
     system("pause");
     return 0;
 }

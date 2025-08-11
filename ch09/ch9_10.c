@@ -19,8 +19,8 @@ list_pointer SetData(int size)
     ptr = NULL;
     srand((unsigned) time(NULL));
     temp = (node_pointer)malloc(sizeof(nodetype));
-    if(temp==NULL) { printf("°O¾ĞÅé¤£¨¬!");  exit(1); }
-    temp->data = rand() % 1000; /* ÀH¾÷²£¥Í¤T¦ì¼Æ¸ê®Æ */
+    if(temp==NULL) { printf("è¨˜æ†¶é«”ä¸è¶³!");  exit(1); }
+    temp->data = rand() % 1000; /* éš¨æ©Ÿç”¢ç”Ÿä¸‰ä½æ•¸è³‡æ–™ */
     temp->next = NULL;
     before = temp;
     ptr = before;
@@ -28,8 +28,8 @@ list_pointer SetData(int size)
     for(i=2;i<=size;i++)
     {
       temp = (node_pointer)malloc(sizeof(nodetype));
-      if(temp==NULL) { printf("°O¾ĞÅé¤£¨¬!");  exit(1); }
-      temp->data = rand() % 1000; /* ÀH¾÷²£¥Í¤T¦ì¼Æ¸ê®Æ */
+      if(temp==NULL) { printf("è¨˜æ†¶é«”ä¸è¶³!");  exit(1); }
+      temp->data = rand() % 1000; /* éš¨æ©Ÿç”¢ç”Ÿä¸‰ä½æ•¸è³‡æ–™ */
       temp->next = NULL;
       before->next = temp;
       before = temp;
@@ -51,7 +51,7 @@ list_pointer LSD_RadixSort(list_pointer ptr, int compare_times)
 {
     int i,x,d,s=1;
     list_pointer temp,front[10],rear[10];
-    for (i=0;i<compare_times;i++)    /* ±q³Ì«á¤@¦ì¶}©l³B²zm­Ó¦ì¼Æ */
+    for (i=0;i<compare_times;i++)    /* å¾æœ€å¾Œä¸€ä½é–‹å§‹è™•ç†må€‹ä½æ•¸ */
     { 
         for (x=0;x<=9;x++)
         {
@@ -64,16 +64,16 @@ list_pointer LSD_RadixSort(list_pointer ptr, int compare_times)
             ptr = ptr->next;
             temp->next = NULL;
             if(front[d]!= NULL)  
-            {     /* ­YQueue[d]¬°ªÅ */
+            {     /* è‹¥Queue[d]ç‚ºç©º */
                rear[d]->next = temp; rear[d] = temp;
             }
-            else  /* ­YQueue[d]«DªÅ */
+            else  /* è‹¥Queue[d]éç©º */
             {  
                front[d] = temp;      rear[d] = temp;
             }
         } 
         d = 0;
-        while(front[d]==NULL)  /* ²¤¹L«e­±ªÅªº¦î¦C */
+        while(front[d]==NULL)  /* ç•¥éå‰é¢ç©ºçš„ä½‡åˆ— */
             d++;
         ptr = front[d];        temp=rear[d];
         d++;
@@ -94,10 +94,10 @@ list_pointer LSD_RadixSort(list_pointer ptr, int compare_times)
 int main()
 {
    list_pointer ptr=NULL;
-   ptr = SetData(8); /* ²£¥Í8µ§¤T¦ì¼Æ¸ê®Æ */
-   printf("±Æ§Ç«e °O¿ı¬°:"); PrintData(ptr);
+   ptr = SetData(8); /* ç”¢ç”Ÿ8ç­†ä¸‰ä½æ•¸è³‡æ–™ */
+   printf("æ’åºå‰ è¨˜éŒ„ç‚º:"); PrintData(ptr);
    ptr = LSD_RadixSort(ptr,3);
-   printf("±Æ§Ç«á °O¿ı¬°:"); PrintData(ptr);
+   printf("æ’åºå¾Œ è¨˜éŒ„ç‚º:"); PrintData(ptr);
    system("pause");
    return 0;
 }

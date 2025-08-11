@@ -4,10 +4,10 @@
 
 int main()
 {
-    char s1[] = "Welcome";                   /* s1¬°°}¦C¦r¦ê  */
-    char *s2 = "Welcome";                    /* s2¬°«ü¼Ð¦r¦ê  */
-    char *s3 = (char *)malloc(sizeof(char)); /* s3¬°«ü¼Ð¦r¦ê  */
-    char *s4 = "Good morning";               /* s4¬°«ü¼Ð¦r¦ê  */
+    char s1[] = "Welcome";                   /* s1ç‚ºé™£åˆ—å­—ä¸²  */
+    char *s2 = "Welcome";                    /* s2ç‚ºæŒ‡æ¨™å­—ä¸²  */
+    char *s3 = (char *)malloc(sizeof(char)); /* s3ç‚ºæŒ‡æ¨™å­—ä¸²  */
+    char *s4 = "Good morning";               /* s4ç‚ºæŒ‡æ¨™å­—ä¸²  */
  /* s1 = s4;  */
     s2 = s4;
     s3 = s1;

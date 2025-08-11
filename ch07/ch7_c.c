@@ -3,25 +3,25 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <malloc.h>
-#include <stdbool.h>           /* °O¿ı bool¦CÁ|­È */
+#include <stdbool.h>           /* è¨˜éŒ„ boolåˆ—èˆ‰å€¼ */
 #define TRUE 1
 #define FALSE 0
 
 
-#define MaxSize 201            /* ²Ö°ï¥i¥H³Ì¦h¦³200­Ó¤¸¯À */
-#define HeapFull(n) (n==MaxSize-1)/* n¥Nªí¥Ø«e²Ö°ï¦³´X­Ó¤¸¯À  */
-#define HeapEmpty(n) (!n)      /* n¬°0®É,!0=1 -> ¬Û·í©ó¦^¶ÇTRUE */
+#define MaxSize 201            /* ç´¯å †å¯ä»¥æœ€å¤šæœ‰200å€‹å…ƒç´  */
+#define HeapFull(n) (n==MaxSize-1)/* nä»£è¡¨ç›®å‰ç´¯å †æœ‰å¹¾å€‹å…ƒç´   */
+#define HeapEmpty(n) (!n)      /* nç‚º0æ™‚,!0=1 -> ç›¸ç•¶æ–¼å›å‚³TRUE */
 
 typedef struct
 {
     int key; 
-    /* ¨ä¥LÄæ¦ì */
+    /* å…¶ä»–æ¬„ä½ */
 }element;
 
-element heap[MaxSize];       /* «Å§i¦s©ñ²Ö°ïªº°}¦C */
+element heap[MaxSize];       /* å®£å‘Šå­˜æ”¾ç´¯å †çš„é™£åˆ— */
 int n=0; 
 
-void insert_maxheap(element item,int *n) /* ´¡¤J·s¤¸¯À¨ì²Ö°ï */
+void insert_maxheap(element item,int *n) /* æ’å…¥æ–°å…ƒç´ åˆ°ç´¯å † */
 {
   int i;
   if(HeapFull(*n)) { printf("Heap is Full!\n"); exit(1); }
@@ -33,14 +33,14 @@ void insert_maxheap(element item,int *n) /* ´¡¤J·s¤¸¯À¨ì²Ö°ï */
   while(i!=1)
   {
     if(!(item.key > heap[i/2].key))  break;
-    heap[i] = heap[i/2];        /* ±N¤÷¸`ÂI©¹¤U­° */
-    i = i/2;                    /* ¥Ñ©ó«Å§i¬°int,©Ò¥H¦Û°ÊÂà«¬¬Û·í©ó¨ú¤U°ª´µ */
+    heap[i] = heap[i/2];        /* å°‡çˆ¶ç¯€é»å¾€ä¸‹é™ */
+    i = i/2;                    /* ç”±æ–¼å®£å‘Šç‚ºint,æ‰€ä»¥è‡ªå‹•è½‰å‹ç›¸ç•¶æ–¼å–ä¸‹é«˜æ–¯ */
   }
   heap[i] = item;
 }
 
 
-element delete_maxheap(int *n)  /* §R°£³Ì¤jÁä­È¤¸¯À */
+element delete_maxheap(int *n)  /* åˆªé™¤æœ€å¤§éµå€¼å…ƒç´  */
 {
   int parent,child;
   element item,temp;
@@ -49,21 +49,21 @@ element delete_maxheap(int *n)  /* §R°£³Ì¤jÁä­È¤¸¯À */
   
   item = heap[1];                  /* */
   
-  temp = heap[(*n)];               /* ¨ú¥X½s¸¹³Ì«áªº¸`ÂI©ñ¤Jtemp */
-  (*n)--;                        /* ¾ã´Ê¾ğªº¸`ÂI¼Æ¶qÀ³¸Ó¤Ö¤@­Ó */
+  temp = heap[(*n)];               /* å–å‡ºç·¨è™Ÿæœ€å¾Œçš„ç¯€é»æ”¾å…¥temp */
+  (*n)--;                        /* æ•´æ£µæ¨¹çš„ç¯€é»æ•¸é‡æ‡‰è©²å°‘ä¸€å€‹ */
   
-  parent = 1;                      /* ¥Ñ®Ú¸`ÂI¶}©l¤ñ¸û */
-  child = 2;                       /* ®Úªº¥ª¤l¸`ÂI½s¸¹ */    
+  parent = 1;                      /* ç”±æ ¹ç¯€é»é–‹å§‹æ¯”è¼ƒ */
+  child = 2;                       /* æ ¹çš„å·¦å­ç¯€é»ç·¨è™Ÿ */    
   while(child <= *n)
   {
      if ((child <*n) && (heap[child].key < heap[child+1].key))
-        child++;             /* ¥k¤l¸`ÂI¸û¤j,©Ò¥HÀ³¸Ó¤ñ¸ûªº¬O¥k¤l¸`ÂI */ 
+        child++;             /* å³å­ç¯€é»è¼ƒå¤§,æ‰€ä»¥æ‡‰è©²æ¯”è¼ƒçš„æ˜¯å³å­ç¯€é» */ 
      
      if(temp.key >= heap[child].key)  
         break;
      else
      {
-        heap[parent] = heap[child];        /* »P¸û¤jªº¤l¸`ÂI¤¬´« */
+        heap[parent] = heap[child];        /* èˆ‡è¼ƒå¤§çš„å­ç¯€é»äº’æ› */
         parent = child;
         child = child*2;   
      }

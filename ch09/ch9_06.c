@@ -20,7 +20,7 @@ void PrintData(int x[],int i,int n)
 
 
 
-void ShiftTo(int x[],int Dest,int Src)  /* ShiftTo : ¨ú¥Xx[Dest]~x[Src]³Ì¤pªº©ñ³Ì«e,¨ä¾l¦V«á²¾¤@®æ */
+void ShiftTo(int x[],int Dest,int Src)  /* ShiftTo : å–å‡ºx[Dest]~x[Src]æœ€å°çš„æ”¾æœ€å‰,å…¶é¤˜å‘å¾Œç§»ä¸€æ ¼ */
 {
      int i,temp;
 
@@ -34,9 +34,9 @@ void SortingX(int x[],int left,int middle,int right)
 {
     int i,j;
 
-    i = left;             /* i¬O­n¦X¨Öªº²Ä¤@­Ó¤l¦ê¦C¶}ÀY¦ì¸m */
+    i = left;             /* iæ˜¯è¦åˆä½µçš„ç¬¬ä¸€å€‹å­ä¸²åˆ—é–‹é ­ä½ç½® */
     
-    j = middle + 1;         /* j¬O­n¦X¨Öªº²Ä¤G­Ó¤l¦ê¦C¶}ÀY¦ì¸m */
+    j = middle + 1;         /* jæ˜¯è¦åˆä½µçš„ç¬¬äºŒå€‹å­ä¸²åˆ—é–‹é ­ä½ç½® */
     
     while((j!=right+1)&&(i!=j))
     {
@@ -44,12 +44,12 @@ void SortingX(int x[],int left,int middle,int right)
      {
          ShiftTo(x,i,j);    /* x[i],x[i+1]..x[j-1],x[j] -> x[j],x[i],x[i+1],...x[j-1] */
          
-         /* x[i]~x[j]¤¤²Ä¤@­Ó¤w©w¦ì,Ä~Äò³B²zx[i+1]~x[j+1]ªº©w¦ì */
+         /* x[i]~x[j]ä¸­ç¬¬ä¸€å€‹å·²å®šä½,ç¹¼çºŒè™•ç†x[i+1]~x[j+1]çš„å®šä½ */
          i++;
          j++;
      }
      else
-         i++;   /* x[i]~x[j]¤¤²Ä¤@­Ó¤w©w¦ì,Ä~Äò³B²zx[i+1]~x[j]ªº©w¦ì */
+         i++;   /* x[i]~x[j]ä¸­ç¬¬ä¸€å€‹å·²å®šä½,ç¹¼çºŒè™•ç†x[i+1]~x[j]çš„å®šä½ */
    }
 }
  
@@ -59,10 +59,10 @@ void MergeR(int x[], int left, int middle, int right)
        return;
     else
     {
-       MergeR(x,left,(left+middle)/2,middle);          /* «e¥b³¡¦X¨Ö */
-       MergeR(x,middle+1,(middle+1+right)/2,right);    /* «á¥b³¡¦X¨Ö */
+       MergeR(x,left,(left+middle)/2,middle);          /* å‰åŠéƒ¨åˆä½µ */
+       MergeR(x,middle+1,(middle+1+right)/2,right);    /* å¾ŒåŠéƒ¨åˆä½µ */
     }
-    SortingX(x,left,middle,right);  /* ±Nx[left]~x[right]±Æ§Ç */
+    SortingX(x,left,middle,right);  /* å°‡x[left]~x[right]æ’åº */
 }
  
 int main(void)
@@ -70,9 +70,9 @@ int main(void)
     int x[10]={0};
 
     SetData(x,0,9);
-    printf("±Æ§Ç«e x[]="); PrintData(x,0,9);
+    printf("æ’åºå‰ x[]="); PrintData(x,0,9);
     MergeR(x,0,10/2,9);
-    printf("±Æ§Ç«á x[]="); PrintData(x,0,9);
+    printf("æ’åºå¾Œ x[]="); PrintData(x,0,9);
 
     system("pause");
     return 0;

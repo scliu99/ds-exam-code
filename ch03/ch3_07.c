@@ -4,9 +4,9 @@
 
 
 int insertElement(int value,int location,int ary[],int len) 
-{   /* ´¡¤J¹Bºâ */
+{   /* æ’å…¥é‹ç®— */
      int i;
-     if(location >= len) return 0;  /* ¦pªG´¡¤Jªº¯Á¤Þ¦ì¸m¶W¹L°}¦C½d³ò¡A¦^¶Ç0 */
+     if(location >= len) return 0;  /* å¦‚æžœæ’å…¥çš„ç´¢å¼•ä½ç½®è¶…éŽé™£åˆ—ç¯„åœï¼Œå›žå‚³0 */
      for(i=len-2 ; i>=location ; i--)
          ary[i+1] = ary[i];
      ary[location] = value;

@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void func1(int *p,int len);           /*  ¨ç¦¡«Å§i  */
+void func1(int *p,int len);           /*  å‡½å¼å®£å‘Š  */
 int main()
 {
      int i;
@@ -21,13 +21,13 @@ int main()
      system("pause");
      return 0;
 }
-void func1(int *p,int len)   /*  ¥i§ï¼g¬° void func1(int p[],int len)  */
+void func1(int *p,int len)   /*  å¯æ”¹å¯«ç‚º void func1(int p[],int len)  */
 {
      int i;
 
 
      for(i=0;i<len;i++)
-        p[i] = p[i] - 1;        /*   ¥i§ï¼g¬° *(p+i) = *(p+i) - 1;  */
+        p[i] = p[i] - 1;        /*   å¯æ”¹å¯«ç‚º *(p+i) = *(p+i) - 1;  */
 
 }
 

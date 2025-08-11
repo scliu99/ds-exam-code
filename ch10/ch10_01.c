@@ -5,7 +5,7 @@
 typedef struct{
       int key;
       char data;
-     /*   ¨ä¥L¸ê®ÆÄæ¦ì */
+     /*   å…¶ä»–è³‡æ–™æ¬„ä½ */
 }record;
 
 void SetData(record x[],int n)
@@ -36,9 +36,9 @@ int main()
    record x[9];
 
    SetData(x,8);
-   loc = SeqSearch(x,8,3); /*·j´Mkey=3ªº°O¿ı */
+   loc = SeqSearch(x,8,3); /*æœå°‹key=3çš„è¨˜éŒ„ */
    if (loc==-1)
-      printf("µL¦¹µ§¸ê®Æ\n");
+      printf("ç„¡æ­¤ç­†è³‡æ–™\n");
     else
       printf("x[%d]=%d \t %c\n",loc,x[loc].key,x[loc].data);
     system("pause");
