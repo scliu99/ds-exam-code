@@ -1,6 +1,7 @@
 /*  ch1_02.c   */
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #define num 5
  

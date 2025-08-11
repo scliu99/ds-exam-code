@@ -3,7 +3,7 @@
         "*.c": "c"
     },
     "[c]": {
-        "files.encoding": "big5",
+        
         "files.autoGuessEncoding": true
     }
 }
